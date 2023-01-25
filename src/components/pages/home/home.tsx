@@ -1,9 +1,9 @@
 import { ClassTeste } from "./styles"
 
-export function Classroom() {
+export function Home() {
   return (
     <ClassTeste>
-      <h2>Clasroom</h2>
+      <h2>Home</h2>
     </ClassTeste>
   );
 }

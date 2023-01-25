@@ -31,7 +31,7 @@ export function LoginForm() {
       setError(true);
       return;
     }
-    navigate("/classroom");
+    navigate("/home");
   }
 
   return (
@@ -46,7 +46,7 @@ export function LoginForm() {
               placeholder="Seu email"
               name="email"
               required
-              //value={"marcus.silva@gmail.com"}
+              value={"marcus.silva@gmail.com"}
             />
             <div>
               <input
@@ -54,7 +54,7 @@ export function LoginForm() {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 required
-                //value={"Abcd@1234"}
+                value={"Abcd@1234"}
               />
               <button onClick={handleShowPassword}>
                 {showPassword ? (
