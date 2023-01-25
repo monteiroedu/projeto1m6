@@ -63,8 +63,15 @@ export function LoginForm() {
                   <BsEyeFill size={25} />
                 )}
               </button>
-            </div>
+                          </div>
             <button type="submit">Login</button>
+            <button
+            onClick={() => {
+              navigate("/register");
+            }}
+          >
+            Not have Account?
+          </button>
           </StyledForm>
         </StyledLoginForm>
       )}

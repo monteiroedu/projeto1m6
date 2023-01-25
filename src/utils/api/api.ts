@@ -1,5 +1,6 @@
 import axios from "axios";
-import { LoginRequest } from "../types/requests";
+import { LoginRequest, UserPayload, } from "../types/requests";
+import { HandleError } from "../errors/handle-error-modal";
 
 axios.defaults.baseURL = "https://xbox-live-api.onrender.com";
 axios.defaults.headers.post["Content-Type"] = "application/json";
@@ -39,4 +40,14 @@ export const api = {
       alert(err);
     }
   },
+
+  createUser: async (payload: UserPayload) => {
+    try {
+      const response = await axios.post("/user", payload);
+      return response.data;
+    } catch (err) {
+      HandleError(err);
+    }
+  },
+
 };
