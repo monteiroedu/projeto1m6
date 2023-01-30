@@ -4,6 +4,21 @@ import { api } from "../../../utils/api/api";
 import { UserPayload } from "../../../utils/types/requests";
 import { useNavigate } from "react-router-dom";
 import { HandleError } from "../../../utils/errors/handle-error-modal";
+
+import {
+  ContainerHome,
+  ContainerHomeTop,
+  ContainerHomeTopLeft,
+  ContainerHomeTopRight,
+  ButtonBack,
+  Container,
+  ContainerGenre,
+  ContainerGame,
+} from "./styles";
+
+import Logo from "../../../assets/images/logo.png";
+import { BsFillArrowLeftCircleFill } from "react-icons/bs";
+
 export function CreateUser() {
   const navigate = useNavigate();
 
@@ -74,8 +89,49 @@ export function CreateUser() {
   }
 
   return (
-    <div>
-      <Form title={"Register"} inputs={inputOptions} onSubmit={handleSubmit} />
-    </div>
+    // <div>
+    //   <Form title={"Register"} inputs={inputOptions} onSubmit={handleSubmit} />
+      
+    // </div>
+    <ContainerHome>
+      <ContainerHomeTop>
+        {/* <ContainerHomeTopLeft>
+          <ButtonBack
+            onClick={() => {
+              navigate("/");
+            }}
+          >
+            <BsFillArrowLeftCircleFill size={25} />
+          </ButtonBack>
+        </ContainerHomeTopLeft> */}
+        {/* <ContainerHomeTopRight>
+          <img
+            style={{
+              display: "flex",
+              width: 250,
+              height: 70,
+              // objectFit: 'cover',
+              // backgroundColor: 'pink'
+            }}
+            alt="Imagem"
+            src={Logo}
+          />
+        </ContainerHomeTopRight> */}
+        <img
+            style={{
+              display: "flex",
+              width: 250,
+              height: 70,
+              // objectFit: 'cover',
+              // backgroundColor: 'pink'
+            }}
+            alt="Imagem"
+            src={Logo}
+          />
+      </ContainerHomeTop>
+      <Container>
+        <Form title={"Register"} inputs={inputOptions} onSubmit={handleSubmit} />
+      </Container>
+    </ContainerHome>
   );
 }

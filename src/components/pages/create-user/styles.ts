@@ -6,19 +6,19 @@ export const ContainerHome = styled.div`
     flex-direction: column;
     /* align-items: center; */
     /* justify-content: center; */
-    width: 100%;
+    /* width: 100%; */
     height: 100%;
+    margin-bottom: 20px;
 `;
 
 export const ContainerHomeTop = styled.div`
     /* background-color: yellow; */
     display: flex;
     /* flex-direction: column; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100px;
-    margin-bottom: 30px;
 `;
 
 export const ContainerHomeTopLeft = styled.div`
@@ -66,85 +66,23 @@ export const Container = styled.div`
     justify-content: center;
     /* width: 100%; */
     /* height: 100%; */
-    /* margin-bottom: 30px; */
 `;
-
-export const ContainerTitle = styled.div`
-    /* background-color: gray; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-start;
-    width: 90%;
-    /* margin-bottom: 20px; */
-    /* margin: 40px; */
-    /* height: 100%; */
-`;
-
 export const ContainerGenre = styled.div`
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 90%;
-    /* height: 100%; */
-    margin-bottom: 30px;
-    margin-top: 10px;
-`;
-
-export const CardGenre = styled.div`
-    background-color: black;
+    /* background-color: yellow; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 180px;
-    height: 150px;
-    margin: 10px;
+    width: 100%;
+    /* height: 100%; */
 `;
 
 export const ContainerGame = styled.div`
-    background-color: white;
+    /* background-color: yellow; */
     display: flex;
-    /* flex-direction: column; */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 90%;
-    margin: 10px;
-
+    /* width: 100%; */
     /* height: 100%; */
-`;
-
-export const CardGame = styled.div`
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    /* width: 180px;
-    height: 150px; */
-    width: 300px;
-    height: 250px;
-    margin: 10px;
-`;
-
-export const CardGameImage = styled.div`
-    background-color: yellowgreen;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 220px;
-`;
-
-export const CardGameText = styled.div`
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 300px;
-    height: 30px;
 `;

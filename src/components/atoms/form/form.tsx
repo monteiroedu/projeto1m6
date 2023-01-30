@@ -1,6 +1,6 @@
 import { FormEvent } from "react";
 import { FormContainer, PersonalizedInput } from "./styles";
-
+import { useNavigate } from "react-router-dom";
 export interface InputProps {
   placeholder: string;
   type: string;
@@ -37,6 +37,8 @@ export function Form({
       });
     }
   }
+
+  const navigate = useNavigate();
 
   return (
     <FormContainer>
@@ -79,6 +81,13 @@ export function Form({
           </button>
         )}
       </form>
+      <button
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Voltar
+      </button>
     </FormContainer>
   );
 }

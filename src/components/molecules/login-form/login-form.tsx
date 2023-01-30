@@ -4,6 +4,7 @@ import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { api } from "../../../utils/api/api";
 import { useNavigate } from "react-router-dom";
 import { Loading } from "../loading/loading";
+import Logo from '../../../assets/images/logo.png';
 
 export function LoginForm() {
   const [showPassword, setShowPassword] = useState<boolean>(false);
@@ -40,6 +41,17 @@ export function LoginForm() {
         <Loading />
       ) : (
         <StyledLoginForm>
+          <img
+            style={{
+              display: 'flex',
+              width: 250,
+              height: 70,
+              // objectFit: 'cover',
+              // backgroundColor: 'pink'
+            }}
+            alt='Imagem'
+            src={Logo}
+          />
           <h2>Login</h2>
           <StyledForm onSubmit={handleSubmit} error={error}>
             <input
@@ -70,7 +82,7 @@ export function LoginForm() {
               navigate("/register");
             }}
           >
-            Not have Account?
+            Criar Conta
           </button>
           </StyledForm>
         </StyledLoginForm>

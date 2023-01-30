@@ -14,6 +14,8 @@ export const FormContainer = styled.section`
     justify-content: space-evenly;
     min-width: 300px;
     width: 50%;
+    margin-bottom: 10px;
+    margin-top: 20px;
   }
 `;
 export type InputProps = {

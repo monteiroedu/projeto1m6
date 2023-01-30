@@ -41,13 +41,60 @@ export const api = {
     }
   },
 
+  getGenres: async () => {
+      const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get("/genre", {
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`, // Not always needed with a GET request
+            },
+      });
+      return response.data;
+    } catch (err: any) {
+      HandleError({ message: err.message });
+    }
+  },
+
+  getGames: async () => {
+      const token = localStorage.getItem("token");
+    try {
+      const response = await axios.get("/game", {
+        headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`, // Not always needed with a GET request
+            },
+      });
+      return response.data;
+    } catch (err: any) {
+      HandleError({ message: err.message });
+    }
+  },
+
   createUser: async (payload: UserPayload) => {
     try {
+      // const response = await axios.post("/user", payload);
       const response = await axios.post("/user", payload);
       return response.data;
     } catch (err) {
       HandleError(err);
     }
   },
+
+  // getGenre: async () => {
+  //   const payload = localStorage.getItem("token");
+  //   try {
+  //     const response = await axios.post("/genre", {
+  //       headers: {
+  //             "Content-Type": "application/json",
+  //             Authorization: `Bearer ${payload}`, // Not always needed with a GET request
+  //           },
+  //     });
+  //     return response.data;
+  //     console.log('gg', response.data);
+  //   } catch (err) {
+  //     HandleError(err);
+  //   }
+  // },
 
 };
