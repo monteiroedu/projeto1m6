@@ -1,9 +1,9 @@
 import { useState } from "react";
-import { Form, InputProps, InvalidData } from "../../atoms/form/form";
-import { api } from "../../../utils/api/api";
-import { UserPayload } from "../../../utils/types/requests";
+import { Form, InputProps, InvalidData } from "../../components/form/form";
+import { api } from "../../utils/api/api";
+import { UserPayload } from "../../utils/types/requests";
 import { useNavigate } from "react-router-dom";
-import { HandleError } from "../../../utils/errors/handle-error-modal";
+import { HandleError } from "../../utils/errors/handle-error-modal";
 
 import {
   ContainerHome,
@@ -16,7 +16,8 @@ import {
   ContainerGame,
 } from "./styles";
 
-import Logo from "../../../assets/images/logo.png";
+//import Logo from "../../../assets/images/logo.png";
+import Logo from "../../assets/images/Logo.png";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 export function CreateUser() {

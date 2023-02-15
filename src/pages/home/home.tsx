@@ -17,10 +17,10 @@ import {
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
-import Logo from "../../../assets/images/logo.png";
-import { api } from "../../../utils/api/api";
-import { UserPayload } from "../../../utils/types/requests";
-import { Genre, Game } from "../../../utils/types/requests";
+import Logo from "../../assets/images/logo.png";
+import { api } from "../../utils/api/api";
+import { UserPayload } from "../../utils/types/requests";
+import { Genre, Game } from "../../utils/types/requests";
 
 export function Home() {
   const [genres, setGenres] = useState<Genre[]>([]);
