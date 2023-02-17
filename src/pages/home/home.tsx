@@ -14,6 +14,7 @@ import {
   CardGame,
   CardGameText,
   CardGameImage,
+  ContainerBotao,
 } from "./styles";
 import { useNavigate } from "react-router-dom";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
@@ -30,56 +31,6 @@ export function Home() {
 
   const token = localStorage.getItem("token");
 
-  console.log('genres', genres);
-  console.log('games', games);
-
-  // const genres2 = [
-  //   {
-  //     id: "1d783917-2eaa-4cac-bd9e-aa3271c5de05",
-  //     Name: "FPS",
-  //     createdAt: "2023-01-19T18:10:33.433Z",
-  //     updatedAt: "2023-01-19T18:09:26.724Z",
-  //   },
-  //   {
-  //     id: "e3aa10d5-d69d-4fed-857f-f0aaa935ab4d",
-  //     Name: "Running",
-  //     createdAt: "2023-01-19T18:10:33.433Z",
-  //     updatedAt: "2023-01-19T18:09:57.692Z",
-  //   },
-  //   {
-  //     id: "eaaab580-179e-42a9-8430-b49fd887d0f1",
-  //     Name: "Sport",
-  //     createdAt: "2023-01-19T18:10:33.434Z",
-  //     updatedAt: "2023-01-19T18:10:08.196Z",
-  //   },
-  //   {
-  //     id: "b501df8a-ef6d-4c9f-b867-a747ea92cf55",
-  //     Name: "Horror",
-  //     createdAt: "2023-01-19T18:10:33.434Z",
-  //     updatedAt: "2023-01-19T18:10:19.628Z",
-  //   },
-  //   {
-  //     id: "8a274589-a9a5-46d3-979c-f00e2a980a4f",
-  //     Name: "Action and adventure",
-  //     createdAt: "2023-01-19T18:10:33.434Z",
-  //     updatedAt: "2023-01-19T18:10:59.412Z",
-  //   },
-  // ];
-
-  // const games2 = [
-  //   {
-  //     id: "33693810-9bf8-4818-b01a-fbdd287aaf7d",
-  //     Title: "Pac-Man",
-  //     CoverImageUrl:
-  //       "https://play-lh.googleusercontent.com/V-lvUzA5kK0Xw3wdg8Ct3vfIMXUX5vXYcNLPmudaZ-eyQjedYz-luqIuLmJO6KodE0Y",
-  //   },
-  //   {
-  //     id: "e373cb97-d639-4a1f-90f3-73cf9dcba7bf",
-  //     Title: "eu",
-  //     CoverImageUrl: "https://avatars.githubusercontent.com/u/90797040?v=4",
-  //   },
-  // ];
-
   async function findGenres() {
     const data = await api.getGenres();
     setGenres(data);
@@ -88,6 +39,11 @@ export function Home() {
   async function findGames() {
     const data = await api.getGames();
     setGames(data);
+  }
+
+  async function createGenre() {
+    const data = await api.createGenre();
+    // setGames(data);
   }
 
   useEffect(() => {
@@ -218,6 +174,14 @@ export function Home() {
       </ContainerHomeTop>
       <Container>
         <ContainerTitle>GENERO</ContainerTitle>
+        <ContainerBotao
+          onClick={() => {
+            navigate("/creategenre");
+            // api.createGenre();
+          }}
+        >
+          Criar Genero
+        </ContainerBotao>
         <ContainerGenre>
           {genres.map((genre) => {
             return (
@@ -233,13 +197,11 @@ export function Home() {
             return (
               <CardGame key={game.id}>
                 <CardGameImage>
-                  <img
-                    src={game.CoverImageUrl}
-                    width={300}
-                    height={220}
-                    />
+                  <img src={game.CoverImageUrl} width={300} height={220} />
                 </CardGameImage>
-                <CardGameText><span>{game.Title}</span></CardGameText>
+                <CardGameText>
+                  <span>{game.Title}</span>
+                </CardGameText>
               </CardGame>
             );
           })}

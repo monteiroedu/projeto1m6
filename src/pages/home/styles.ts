@@ -148,3 +148,15 @@ export const CardGameText = styled.div`
     width: 300px;
     height: 30px;
 `;
+
+export const ContainerBotao = styled.div`
+    background-color: gray;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 30px;
+    cursor: pointer;
+`;

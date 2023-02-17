@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LoginRequest, UserPayload, } from "../types/requests";
+import { GenrePayload, LoginRequest, UserPayload, } from "../types/requests";
 import { HandleError } from "../errors/handle-error-modal";
 
 axios.defaults.baseURL = "https://xbox-live-api.onrender.com";
@@ -42,13 +42,13 @@ export const api = {
   },
 
   getGenres: async () => {
-      const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     try {
       const response = await axios.get("/genre", {
         headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`, // Not always needed with a GET request
-            },
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // Not always needed with a GET request
+        },
       });
       return response.data;
     } catch (err: any) {
@@ -57,18 +57,43 @@ export const api = {
   },
 
   getGames: async () => {
-      const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     try {
       const response = await axios.get("/game", {
         headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${token}`, // Not always needed with a GET request
-            },
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`, // Not always needed with a GET request
+        },
       });
       return response.data;
     } catch (err: any) {
       HandleError({ message: err.message });
     }
+  },
+
+  createGenre: async (GenrePayload: GenrePayload) => {
+   
+    const token = localStorage.getItem("token");
+    const data = {Name: "Teste4"};
+    // const data = GenrePayload;
+
+    fetch("https://xbox-live-api.onrender.com/genre", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`, // Not always needed with a GET request
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        alert('Gênero criado com sucesso!');
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        alert('Erro ao criar o Gênero');
+      });
   },
 
   createUser: async (payload: UserPayload) => {

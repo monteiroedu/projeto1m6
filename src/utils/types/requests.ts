@@ -25,6 +25,10 @@ export type UserPayload = {
   cpf: string;
 };
 
+export type GenrePayload = {
+  Name: string;
+};
+
 export type Genre = {
   id: string;
   Name: string; 
