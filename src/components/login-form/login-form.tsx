@@ -4,7 +4,7 @@ import { BsEyeFill, BsEyeSlashFill } from "react-icons/bs";
 import { api } from "../../utils/api/api";
 import { useNavigate } from "react-router-dom";
 import { Loading } from "../loading/loading";
-import Logo from '../../assets/images/Logo.png';
+import Logo from '../../assets/images/logo.png';
 //import Logo from '../../../assets/images/logo.png';
 
 export function LoginForm() {
