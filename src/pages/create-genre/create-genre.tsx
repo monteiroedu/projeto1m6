@@ -17,7 +17,7 @@ import {
 } from "./styles";
 
 //import Logo from "../../../assets/images/logo.png";
-import Logo from "../../assets/images/lsogo.png";
+import Logo from "../../assets/images/logo.png";
 import { BsFillArrowLeftCircleFill } from "react-icons/bs";
 
 export function CreateGenre() {
