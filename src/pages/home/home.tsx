@@ -41,11 +41,6 @@ export function Home() {
     setGames(data);
   }
 
- // async function createGenre() {
-   // const data = await api.createGenre();
-    // setGames(data);
-  //s}
-
   useEffect(() => {
     findGenres();
     findGames();
